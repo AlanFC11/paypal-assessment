@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Checkout</title>
+<meta name="description" content="Checkout page">
+<meta name="keywords" content="checkout integration">
+</head>
+<body>
+<h2>Thank you!</h2>
+<h3>Purchase completed succesfully</h3>
+<label id="transactionIDLabel"></label>
+<br>
+<label id="currencyLabel"></label>
+<br>
+<label id="amountLabel"></label>
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const transaction = urlParams.get('transactionID');
+    const currency = urlParams.get('currency');
+    const amount = urlParams.get('amount');
+    document.getElementById("transactionIDLabel").innerHTML = 'Transaction ID: ' + transaction;
+    document.getElementById("currencyLabel").innerHTML = 'Currency: ' + currency;
+    document.getElementById("amountLabel").innerHTML = 'Amount: ' + amount;
+</script>
+</body>
+</html>
